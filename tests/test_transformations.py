@@ -4,8 +4,8 @@ A test for module `transformations` that contains tools for manipulating affine 
 
 import numpy as np
 
-# module `transformations` contains class `Transformation` and its children `Scaling`, `Translation`
-from homework.transformations import Transformation, Scaling, Translation
+# module `transformations` contains class `Transformation` and its children `Scaling`, `Translation`, and `Rotation`
+from homework.transformations import Transformation, Scaling, Translation, Rotation
 
 
 def test_all():
@@ -22,6 +22,12 @@ def test_all():
     assert isinstance(scaling, Transformation)
     # `translation` acts on a point by shifting that point by given `shift`
     assert np.allclose(translation(p), [x+1, y+2])
+
+    # `Rotation` is also a child of `Transformation`
+    rotation = Rotation(angle=np.pi / 3)
+    assert isinstance(rotation, Transformation)
+    # `rotation` acts on a point by rotation by given `angle` around the origin
+    assert np.allclose(rotation([1, 0]), [1 / 2, 3 ** (1 / 2) / 2])
 
     # We can compose any transformations
     composed = scaling @ translation
