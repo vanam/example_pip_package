@@ -1,0 +1,14 @@
+# JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
+.idea/
+
+# Compiled python modules.
+*.pyc
+
+# Setuptools distribution folder.
+/dist/
+
+# Setuptools build folder.
+build/
+
+# Python egg metadata, regenerated from source files by setuptools.
+/*.egg-info
