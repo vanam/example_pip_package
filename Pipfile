@@ -1,0 +1,17 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+numpy = "*"
+# You can define dependency located somewhere on filesystem
+#homework = {editable = true,path = "./../example_pip_package"}
+# Dependency from git
+homework = {git = "https://github.com/vanam/example_pip_package.git"}
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.6"
