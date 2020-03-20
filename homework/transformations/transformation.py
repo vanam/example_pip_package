@@ -91,15 +91,36 @@ class Translation(Transformation):
 
     def __init__(self, shift: list):
         """
-        |1 0 x|
-        |0 1 y|
-        |0 0 1|
+        |1 0 t_x|
+        |0 1 t_y|
+        |0 0 1  |
 
-        :param shift: Translation [x, y]
+        :param shift: Translation [t_x, t_y]
         """
         matrix = np.eye(3)
         matrix[0][2] = shift[0]
         matrix[1][2] = shift[1]
+        super().__init__(matrix)
+
+
+class Rotation(Transformation):
+    """
+    2D Rotation.
+    """
+
+    def __init__(self, angle: float):
+        """
+        |cos(a) -sin(a) 0|
+        |sin(a)  cos(a) 0|
+        |0       0      1|
+
+        :param angle: Angle of rotation in radian.
+        """
+        matrix = np.eye(3)
+        matrix[0][0] = np.cos(angle)
+        matrix[0][1] = -np.sin(angle)
+        matrix[1][0] = np.sin(angle)
+        matrix[1][1] = np.cos(angle)
         super().__init__(matrix)
 
 

@@ -1,1 +1,1 @@
-from .transformation import Transformation, Scaling, Translation, transform
+from .transformation import Transformation, Scaling, Translation, Rotation, transform

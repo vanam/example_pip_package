@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name='homework',
-    version='0.1',
+    version='0.2',
     author="Martin Váňa",
     author_email="vana1martin@gmail.com",
     description="An example pip package",
